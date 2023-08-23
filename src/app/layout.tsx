@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import { Mulish } from "next/font/google";
 import theme from "../../config/theme";
 import NavBarComponent from "./navbar/NavBarComponent";
+import FooterComponent from "./footer/FooterComponent";
 
 const mulish = Mulish({ subsets: ["latin"] });
 
@@ -27,6 +28,7 @@ export default function RootLayout({
           <div className="px-[1em] py-[1em] md:px-[15em] md:py-[3em]">
             {children}
           </div>
+          <FooterComponent />
         </ThemeProvider>
       </body>
     </html>

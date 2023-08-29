@@ -1,19 +1,40 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
+import jwt from "jsonwebtoken";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 
+interface UserInfo {
+  firstname: string;
+  lastname: string;
+  exp: number;
+}
+
 const IntroComponent = () => {
+  const router = useRouter();
+  const [userInfo, setUserInfo] = useState<UserInfo | null>(null);
+
+  const userToken =
+    typeof window !== "undefined" ? localStorage.getItem("token") : null;
+
+  useEffect(() => {
+    if (userToken) {
+      try {
+        const user = jwt.decode(userToken) as UserInfo;
+        if (user) {
+          user && setUserInfo(user);
+        }
+      } catch (error) {
+        console.error("Error decoding JWT:", error);
+      }
+    }
+  }, [userToken]);
+
   return (
     <div className="flex flex-col">
       <div className="overflow-hidden relative">
-        <div className="flex h-[55vh] relative circularAnimation ">
-          {/* <div className="w-80 h-80 bg-[#FFCC32] bg-opacity-40 rounded-full absolute top-[50%] left-[50%] "></div>
-          <div className="w-80 h-80 bg-[#F15632] bg-opacity-40 rounded-full absolute top-[50%] left-[40%] "></div>
-          <div className="w-80 h-80 bg-[#0075BC] bg-opacity-40 rounded-full absolute bottom-[40%] left-[45%] "></div>
-          <div className="w-80 h-80 bg-[#20B78A] bg-opacity-40 rounded-full absolute bottom-[40%] right-[50%] "></div>
-          
-          
-          <div className="w-80 h-80 bg-[#47AEC6] bg-opacity-40 rounded-full absolute left-[30%]"></div> */}
-
+        <div className="flex h-[85vh]  circularAnimation ">
           <Image
             src="/images/bluredColor.jpg"
             alt="quotes"
@@ -21,10 +42,32 @@ const IntroComponent = () => {
             height={700}
           />
         </div>
-        <div className="absolute z-50">
-          <span>Learn</span>
-          <span>Financially</span>
-          <span>with</span>
+        <div className="absolute bottom-20 left-20 w-full h-full flex flex-col gap-10 justify-center  ">
+          <span className="text-6xl font-semibold">Learn & Grow</span>
+          <span className="text-6xl font-semibold flex items-center gap-5">
+            Financially
+            <span className="text-8xl text-[#0075BC]">Free</span>
+          </span>
+          <span className="text-4xl flex items-center gap-5 font-semibold text-[gray]">
+            with
+            <span className="text-6xl text-[black]">Naasa Trading School</span>
+          </span>
+          <div className="flex gap-3">
+            <button
+              onClick={() => router.push("/courses")}
+              className="rounded-[26px] py-[10px] px-[20px] bg-naasa-green text-[#fff]"
+            >
+              Start a Course
+            </button>
+            {!userInfo && (
+              <button
+                onClick={() => router.push("/login")}
+                className="rounded-[26px] py-[10px] px-[20px] bg-naasa-yellow text-[black]"
+              >
+                Sign in
+              </button>
+            )}
+          </div>
         </div>
       </div>
       <div className="flex gap-5 pb-10 justify-center items-center w-[100%] bg-[#F7FCFB]">

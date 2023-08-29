@@ -26,7 +26,7 @@ const CourserAccordion = () => {
           <AccordionSummary
             expandIcon={
               <div
-                className="expand-icon"
+                className="expand-icon hover:bg-gray-200 "
                 onClick={() => toggleAccordion(index)}
               >
                 {activeAccordion[index] ? <Remove color="primary" /> : <Add />}
@@ -37,7 +37,7 @@ const CourserAccordion = () => {
           >
             <div
               className="flex items-center gap-10 "
-              onClick={() => router.push(`courses/${course.title}`)}
+              onClick={() => router.push(`courses/${course.id}`)}
             >
               <div className="flex">
                 <Image

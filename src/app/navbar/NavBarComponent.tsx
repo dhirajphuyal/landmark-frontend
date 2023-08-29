@@ -25,8 +25,9 @@ const NavBarComponent = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [userInfo, setUserInfo] = useState<UserInfo | null>(null);
 
+  const userToken =
+    typeof window !== "undefined" ? localStorage.getItem("token") : null;
   useEffect(() => {
-    const userToken = localStorage.getItem("token");
     if (userToken) {
       try {
         const user = jwt.decode(userToken) as UserInfo;
@@ -37,7 +38,7 @@ const NavBarComponent = () => {
         console.error("Error decoding JWT:", error);
       }
     }
-  }, []);
+  }, [userToken]);
 
   const handleOpenNavMenu = (event: any) => {
     setAnchorElNav(event.currentTarget);

@@ -15,3 +15,16 @@ instance.interceptors.request.use(
     return Promise.reject(error);
   }
 );
+
+instance.interceptors.response.use(
+  (response) => {
+    // if a success response
+    return response;
+  },
+  (error) => {
+    if (error.response && error.response?.status === 401) {
+      window.location.href = "/login";
+    }
+    return Promise.reject(error);
+  }
+);

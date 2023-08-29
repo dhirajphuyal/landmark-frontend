@@ -1,24 +1,37 @@
 export const courses = [
   {
-    title: "Fundamental Analysis",
-    duration: "7h 0m",
-    count: "40",
-    image: "/images/courses/fundamentalAnalysis.png",
-    description:
-      "Yorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis....",
-  },
-  {
+    id: 1764,
     title: "Introduction to Stock Market",
-    duration: "7h 0m",
-    count: "40",
+    duration: "2h 34m",
+    count: "14",
     image: "/images/courses/introductionToStockMarket.png",
     description:
       "Yorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis....",
   },
   {
+    id: 1763,
+    title: "Fundamental Analysis",
+    duration: "2h 53m",
+    count: "13",
+    image: "/images/courses/fundamentalAnalysis.png",
+    description:
+      "Yorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis....",
+  },
+
+  {
+    id: 1808,
     title: "Risk Management & Trading",
-    duration: "7h 0m",
-    count: "40",
+    duration: "1h 11m",
+    count: "9",
+    image: "/images/courses/riskManagmentandTrading.png",
+    description:
+      "Yorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis....",
+  },
+  {
+    id: 1825,
+    title: "Personal Finance",
+    duration: "48m",
+    count: "7",
     image: "/images/courses/riskManagmentandTrading.png",
     description:
       "Yorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis....",

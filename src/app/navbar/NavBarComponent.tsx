@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
+import jwt from "jsonwebtoken";
 
 import Image from "next/image";
 
@@ -24,19 +25,19 @@ const NavBarComponent = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [userInfo, setUserInfo] = useState<UserInfo | null>(null);
 
-  //   useEffect(() => {
-  //     const userToken = localStorage.getItem("token");
-  //     if (userToken) {
-  //       try {
-  //         const user = jwt.decode(userToken) as UserInfo;
-  //         if (user) {
-  //           user && setUserInfo(user);
-  //         }
-  //       } catch (error) {
-  //         console.error("Error decoding JWT:", error);
-  //       }
-  //     }
-  //   }, []);
+  useEffect(() => {
+    const userToken = localStorage.getItem("token");
+    if (userToken) {
+      try {
+        const user = jwt.decode(userToken) as UserInfo;
+        if (user) {
+          user && setUserInfo(user);
+        }
+      } catch (error) {
+        console.error("Error decoding JWT:", error);
+      }
+    }
+  }, []);
 
   const handleOpenNavMenu = (event: any) => {
     setAnchorElNav(event.currentTarget);
@@ -160,14 +161,17 @@ const NavBarComponent = () => {
             {userInfo ? (
               <div className="flex items-center gap-[10px]">
                 <Avatar>{userInfo?.firstname?.charAt(0).toUpperCase()}</Avatar>
-                <span className="font-bold">
-                  {userInfo.firstname} {userInfo.lastname}
-                </span>
                 <Tooltip title="Logout">
-                  <IconButton color="secondary" onClick={handleLogout}>
-                    <Logout />
-                  </IconButton>
+                  <span
+                    onClick={handleLogout}
+                    className="font-bold cursor-pointer"
+                  >
+                    {userInfo.firstname} {userInfo.lastname}
+                  </span>
                 </Tooltip>
+                {/* <IconButton color="secondary" onClick={handleLogout}>
+                    <Logout />
+                  </IconButton> */}
               </div>
             ) : (
               <button

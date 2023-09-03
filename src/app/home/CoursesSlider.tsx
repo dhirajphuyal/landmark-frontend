@@ -1,6 +1,10 @@
-import { AccessTime, KeyboardArrowRight, MenuBook } from "@mui/icons-material";
-import Image from "next/image";
+"use client";
+
 import React from "react";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
+
+import { AccessTime, KeyboardArrowRight, MenuBook } from "@mui/icons-material";
 
 const courses = [
   {
@@ -30,11 +34,15 @@ const courses = [
 ];
 
 const CoursesSlider = () => {
+  const router = useRouter();
   return (
     <div className="flex flex-col gap-5">
       <div className="flex relative  items-center justify-center">
         <span className="text-3xl font-black">Our Courses</span>
-        <button className="absolute right-0 rounded-[26px] py-[5px] px-[20px] bg-[#fff] bg-opacity-50 border border-naasa-green md:rounded-[26px]  md:py-[5px] md:px-[20px]">
+        <button
+          onClick={() => router.push("/courses")}
+          className="absolute right-0 rounded-[26px] py-[5px] px-[20px] bg-[#fff] bg-opacity-50 border border-naasa-green md:rounded-[26px]  md:py-[5px] md:px-[20px]"
+        >
           Explore all
           <KeyboardArrowRight />
         </button>
@@ -53,7 +61,7 @@ const CoursesSlider = () => {
                 alt={course.title}
               />
             </div>
-            <span className="text-lg font-bold">{course.title}</span>
+            <span className="text-lg mt-5 font-bold">{course.title}</span>
             <div className="flex justify-between w-[100%]">
               <div className="flex items-center gap-2">
                 <AccessTime />

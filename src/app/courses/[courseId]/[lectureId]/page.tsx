@@ -8,6 +8,7 @@ import Image from "next/image";
 import { instance } from "../../../../../config/axios";
 import LoadingSkeleton from "../loadingSkeleton";
 import ReactHlsPlayer from "react-hls-player";
+import { courses } from "../../../../../raw-data/dummyCourses";
 
 interface GetCourseDetails {
   isLoading: boolean;
@@ -22,6 +23,8 @@ interface IndividualCourse {
   lessons: any[];
   title: string;
   duration: string;
+  image: string | undefined;
+  description: string | undefined;
 }
 
 const LecturePage = () => {
@@ -37,6 +40,8 @@ const LecturePage = () => {
     lessons: [],
     title: "",
     duration: "",
+    image: "",
+    description: "",
   });
 
   const [activeLesson, setActiveLesson] = useState<string | string[]>(
@@ -98,6 +103,11 @@ const LecturePage = () => {
       const individualCourse = getCourse?.data?.sections?.find(
         (course: any) => course.id === params.courseId
       );
+
+      const dummyCourse = courses.find(
+        (course: any) => course.id == params.courseId
+      );
+
       const activeVideoLink = individualCourse?.lessons?.find(
         (lesson: any) => lesson.id == params.lectureId
       );
@@ -107,6 +117,8 @@ const LecturePage = () => {
         lessons: individualCourse?.lessons,
         title: individualCourse?.title,
         duration: individualCourse?.total_duration,
+        image: dummyCourse?.image,
+        description: dummyCourse?.description,
       });
     }
   }, [getCourse.data]);
@@ -135,7 +147,7 @@ const LecturePage = () => {
                 height={200}
                 style={{ height: 200, width: "100%", objectFit: "contain" }}
                 alt="lesson"
-                src={"/images/courses/fundamentalAnalysis.png"}
+                src={individualCourse.image ? individualCourse.image : ""}
               />
             </div>
             <div className="flex flex-col w-[60%] gap-7">
@@ -156,10 +168,7 @@ const LecturePage = () => {
                   </span>
                 </div>
               </div>
-              <span className="text-sm ">
-                Yorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-                vulputate libero et velit interdum, ac aliquet odio mattis....
-              </span>
+              <span className="text-sm ">{individualCourse.description}</span>
             </div>
           </div>
           <div className="">

@@ -36,10 +36,10 @@ const CourserAccordion = () => {
             id="panel1a-header"
           >
             <div
-              className="flex items-center gap-10 "
+              className="flex items-center gap-10 w-[100%] p-5"
               onClick={() => router.push(`courses/${course.id}`)}
             >
-              <div className="flex">
+              <div className="flex w-[30%]">
                 <Image
                   src={course.image}
                   height={200}
@@ -47,7 +47,7 @@ const CourserAccordion = () => {
                   alt={course.title}
                 />
               </div>
-              <div className="flex flex-col gap-5">
+              <div className="flex flex-col gap-5 w-[70%]">
                 <span
                   className={`font-bold text-2xl ${
                     activeAccordion[index] && "text-naasa-green"

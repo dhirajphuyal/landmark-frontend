@@ -5,7 +5,14 @@ import Image from "next/image";
 import { useRouter, useParams } from "next/navigation";
 
 import { AccessTime, MenuBook } from "@mui/icons-material";
-import { dummyLessons } from "../../../../raw-data/dummyCourses";
+import {
+  courses,
+  dummyLessons,
+  module1Details,
+  module2Details,
+  module3Details,
+  module4Details,
+} from "../../../../raw-data/dummyCourses";
 import { instance } from "../../../../config/axios";
 import LoadingSkeleton from "./loadingSkeleton";
 
@@ -15,13 +22,38 @@ interface GetCourseDetails {
   error: any;
 }
 
+interface Lessons {
+  id: string;
+  title: string;
+  lesson_title: string;
+  duration: string;
+  course_id: string;
+  section_id: string;
+  video_type: string;
+  is_lesson_free: string;
+  video_url: string;
+  attachment_type: string;
+  attachment_url: string;
+  attachment: string;
+  is_completed: number;
+  user_validity: boolean;
+  is_preview: null | any; // Adjust the type of is_preview as needed
+  lesson_type: string;
+  summary: string;
+  // Add 'image' and 'description' properties if you want to include them
+  image?: string;
+  description?: string;
+}
+
 interface IndividualCourse {
   // course_id:string,
   // id:string,
   lessonsCount: number;
-  lessons: any[];
+  lessons: Lessons[];
   title: string;
   duration: string;
+  description: string | undefined;
+  image: string | undefined;
 }
 
 const IndividualCoursePage = () => {
@@ -38,6 +70,8 @@ const IndividualCoursePage = () => {
     lessons: [],
     title: "",
     duration: "",
+    description: "",
+    image: "",
   });
 
   const getCourseDetails = async () => {
@@ -85,16 +119,43 @@ const IndividualCoursePage = () => {
       const individualCourse = getCourse?.data?.sections?.find(
         (course: any) => course.id === params.courseId
       );
+      const dummyCourses = courses.find(
+        (course: any) => course.id == params.courseId
+      );
+      const moduleDetails =
+        params.courseId == "1764"
+          ? module1Details
+          : params.courseId == "1808"
+          ? module3Details
+          : params.courseId == "1825"
+          ? module4Details
+          : module2Details;
+      const updatedLessons: Lessons[] = individualCourse.lessons?.map(
+        (lesson: any) => {
+          const updatedLesson = moduleDetails.find(
+            (details: any) => details.id == lesson.id
+          );
+          if (updatedLesson) {
+            return {
+              ...lesson,
+              image: updatedLesson.image,
+              description: updatedLesson.description,
+            };
+          }
+          return lesson;
+        }
+      );
+
       setIndividualCourse({
         lessonsCount: individualCourse?.lesson_counter_ends,
-        lessons: individualCourse?.lessons,
+        lessons: updatedLessons,
         title: individualCourse?.title,
         duration: individualCourse?.total_duration,
+        description: dummyCourses?.description,
+        image: dummyCourses?.image,
       });
     }
   }, [getCourse.data]);
-
-  console.log(getCourse);
 
   return (
     <div className="flex flex-col gap-10">
@@ -121,7 +182,7 @@ const IndividualCoursePage = () => {
                 height={200}
                 style={{ height: 200, width: "100%", objectFit: "contain" }}
                 alt="lesson"
-                src={"/images/courses/fundamentalAnalysis.png"}
+                src={individualCourse.image ? individualCourse.image : ""}
               />
             </div>
             <div className="flex flex-col w-[60%] gap-7">
@@ -142,23 +203,23 @@ const IndividualCoursePage = () => {
                   </span>
                 </div>
               </div>
-              <span className="text-sm ">
-                Yorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-                vulputate libero et velit interdum, ac aliquet odio mattis....
-              </span>
+              <span className="text-sm ">{individualCourse?.description}</span>
             </div>
           </div>
-          <div className="flex flex-wrap">
+          <div className="flex flex-wrap mt-5">
             {individualCourse?.lessons?.map((lesson, index) => (
               <div
                 key={index}
-                className="w-1/3 flex flex-col items-center p-2 cursor-pointer hover:shadow-lg"
+                className="w-1/3 flex flex-col items-center rounded-lg p-2 cursor-pointer shadow-md hover:shadow-2xl box-border mb-[20px] mr-[20px]"
+                style={{
+                  width: "calc(33.33% - 20px)",
+                }}
                 onClick={() =>
                   router.push(`/courses/${params.courseId}/${lesson.id}`)
                 }
               >
                 <Image
-                  src={"/images/lessons/lesson1.png"}
+                  src={lesson.image ? lesson.image : ""}
                   width={300}
                   height={200}
                   style={{ height: 200, width: "100%" }}

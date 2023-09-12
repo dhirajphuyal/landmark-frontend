@@ -215,9 +215,7 @@ const IndividualCoursePage = () => {
                   width: "calc(33.33% - 20px)",
                 }}
                 onClick={() =>
-                  router.push(
-                    `/courses/${params.courseId}/lecture/${lesson.id}`
-                  )
+                  router.push(`/course/${params.courseId}/lecture/${lesson.id}`)
                 }
               >
                 <Image

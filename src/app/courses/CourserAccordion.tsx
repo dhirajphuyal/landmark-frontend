@@ -37,7 +37,7 @@ const CourserAccordion = () => {
           >
             <div
               className="flex items-center gap-10 w-[100%] p-5"
-              onClick={() => router.push(`courses/${course.id}`)}
+              onClick={() => router.push(`course/${course.id}`)}
             >
               <div className="flex w-[30%]">
                 <Image

@@ -5,10 +5,10 @@ import { useParams } from "next/navigation";
 
 import { AccessTime, MenuBook, PlayArrow } from "@mui/icons-material";
 import Image from "next/image";
-import { instance } from "../../../../../config/axios";
-import LoadingSkeleton from "../loadingSkeleton";
+import { instance } from "../../../../../../config/axios";
+import LoadingSkeleton from "../../loadingSkeleton";
 import ReactHlsPlayer from "react-hls-player";
-import { courses } from "../../../../../raw-data/dummyCourses";
+import { courses } from "../../../../../../raw-data/dummyCourses";
 
 interface GetCourseDetails {
   isLoading: boolean;

@@ -174,7 +174,7 @@ const LecturePage = () => {
           <div className="">
             {videoLink && (
               <ReactHlsPlayer
-                src={videoLink}
+                src={`https://originvideo.mero.school/stock%20marketing%20course/1.%20Introduction%20to%20Stock%20Market%7C1.%20Why%20Should%20We%20Invest-uEiH5/master.m3u8`}
                 autoPlay={false}
                 controls={true}
                 width="100%"

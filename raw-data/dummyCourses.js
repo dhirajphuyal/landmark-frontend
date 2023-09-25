@@ -5,6 +5,35 @@ export const courses = [
     duration: "2h 34m",
     count: "14",
     image: "/images/courses/introductionToStockMarket.png",
+    lessons: [
+      {
+        title: "Why Should We Invest?",
+        duration: "14 mins",
+        id: "23139",
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/mero-school-2007d.appspot.com/o/module1%2FModule%201%20-%2001.png?alt=media&token=c53e9a08-8818-4a8c-81b2-a475054b9df0",
+        description:
+          "In this chapter, we explore the importance of investment and its...",
+      },
+      {
+        title: "Regulators",
+        duration: "05 mins",
+        id: "23141",
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/mero-school-2007d.appspot.com/o/module1%2FModule%201%20-%2002.png?alt=media&token=4b79a8ea-e4f7-4956-8d48-9e2677cbd564",
+        description:
+          "In this chapter, we will explore the capital markets and the...",
+      },
+      {
+        title: "Financial Intermediaries in Nepal",
+        duration: "10 mins",
+        id: "23140",
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/mero-school-2007d.appspot.com/o/module1%2FModule%201%20-%2003.png?alt=media&token=39f55c30-f3a8-42ad-b104-5699d89d488b",
+        description:
+          "In this chapter, our exploration takes us into the realm of...",
+      },
+    ],
     description:
       "Consider this module as your foundational stepping stone to grasp the essence of the stock market. It offers a clearer understanding of investment motives, regulatory oversight, and the pivotal roles of financial intermediaries. Dive into insights about both primary (IPOs) and secondary markets. Familiarize yourself with TMS login, the buying and selling process within the trading platform, and simplify EDIS share transfer procedures through this comprehensive module.",
   },
@@ -14,6 +43,35 @@ export const courses = [
     duration: "2h 53m",
     count: "13",
     image: "/images/courses/fundamentalAnalysis.png",
+    lessons: [
+      {
+        id: "23123",
+        title: "Introduction to Fundamental Analysis",
+        duration: "10 mins",
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/mero-school-2007d.appspot.com/o/module2%2FModule%202%20-%2001.png?alt=media&token=daf2b55d-6e2c-4b0b-8b68-5b17c061f6f7",
+        description:
+          "Within this chapter, we explore into the heart of fundamental...",
+      },
+      {
+        id: "23125",
+        title: "Mindset of an Investor",
+        duration: "09 mins",
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/mero-school-2007d.appspot.com/o/module2%2FModule%202%20-%2002.png?alt=media&token=dd9c7a8a-148b-49a0-84f1-79b9cbaa82f1",
+        description:
+          "In this chapter, we center our exploration on the mindset adopted...",
+      },
+      {
+        id: "23124",
+        title: " Understanding the Annual Report of the Company",
+        duration: "18 mins",
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/mero-school-2007d.appspot.com/o/module2%2FModule%202%20-%2003.png?alt=media&token=03dd961f-bf07-4566-9dec-ca48cddcd197",
+        description:
+          "Within this chapter, we comprehend the details of a company's annual...",
+      },
+    ],
     description:
       "We will start on a journey of thoughtful financial understanding with our comprehensive module on fundamental analysis. You will discover the crucial significance of this analytical approach and delve into the mindset that guides successful investors. You will unveil the details of annual reports, balance sheets, profit and loss statements, and cash flow statements, gaining insights that empower your financial acumen. You will dive into the world of ratio analysis, equipping yourself with the skills to assess a company's performance holistically. You will elevate your insights further with a focus on equity research, all within the framework of this module.",
   },
@@ -24,6 +82,35 @@ export const courses = [
     duration: "1h 11m",
     count: "9",
     image: "/images/courses/riskManagmentandTrading.png",
+    lessons: [
+      {
+        id: "23538",
+        title: "Risk",
+        duration: "13 mins",
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/mero-school-2007d.appspot.com/o/module3%2FModule%203%20-%2001.png?alt=media&token=fcd63c61-8aab-40ce-a994-481b00642d57",
+        description:
+          "In this chapter, we look into the details of risks and expected returns...",
+      },
+      {
+        id: "23539",
+        title: "Variance and Covariance",
+        duration: "",
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/mero-school-2007d.appspot.com/o/module3%2FModule%203%20-%2002.png?alt=media&token=2b2f9397-36df-445e-bc96-d540c60b0890",
+        description:
+          "Within this chapter, we unravel the details of portfolio variance and...",
+      },
+      {
+        id: "23540",
+        title: "Portfolio Optimization",
+        duration: "08 mins",
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/mero-school-2007d.appspot.com/o/module3%2FModule%203%20-%2003.png?alt=media&token=7a44e825-5566-4490-a7ea-6668c0c127e1",
+        description:
+          "This chapter delves into the realm of portfolio management. We cover the...",
+      },
+    ],
     description:
       "In this module, we explore our comprehensive module on risk concepts and their intricacies. Explore more into the calculation of risk through variance and covariance, gaining a deep understanding of portfolio optimization, value at risk, and the strategies used by active traders. Uncover the psychology behind trading biases and learn techniques to mitigate their impact.",
   },
@@ -32,7 +119,37 @@ export const courses = [
     title: "Personal Finance",
     duration: "48m",
     count: "7",
-    image: "/images/courses/riskManagmentandTrading.png",
+    image: "/images/courses/personalFinance.jpg",
+    lessons: [
+      {
+        id: "24083",
+        title: "Personal Finance",
+        duration: "10 mins",
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/mero-school-2007d.appspot.com/o/module4%2FModule%204%20-%2001.png?alt=media&token=1ad11588-fd9c-427c-9954-911af4333a73",
+        description:
+          "This chapter explains different sides of personal finance, understanding...",
+      },
+      {
+        id: "24084",
+        title: "Personal Finance Math (part1)",
+        duration: "08 mins",
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/mero-school-2007d.appspot.com/o/module4%2FModule%204%20-%2002.png?alt=media&token=c161c38f-53c7-4f3d-b316-4f5460410992",
+        description:
+          "In this chapter, we dive into the mathematical aspects of personal finance...",
+      },
+      {
+        id: "24092",
+        title: "Personal Finance Math (part2)",
+        duration: "06 mins",
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/mero-school-2007d.appspot.com/o/module4%2FModule%204%20-%2003.png?alt=media&token=42d55ad6-45aa-481d-bec2-d3c05181070b",
+        description:
+          "Continuing our exploration of personal finance math, this chapter will help...",
+      },
+    ],
+
     description:
       "We explore our comprehensive module dedicated to personal finance. Gain insights into the mathematical foundations of personal finance, navigate the intricate landscape of retirement planning, and grasp the significance of mutual funds within investment portfolios. Equip yourself with the knowledge and tools to tackle the challenges of managing your financial future effectively.",
   },

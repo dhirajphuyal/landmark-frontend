@@ -5,10 +5,12 @@ import { useParams } from "next/navigation";
 
 import { AccessTime, MenuBook, PlayArrow } from "@mui/icons-material";
 import Image from "next/image";
-import { instance } from "../../../../../../config/axios";
+import { instance, meroSchool } from "../../../../../../config/axios";
 import LoadingSkeleton from "../../loadingSkeleton";
 import ReactHlsPlayer from "react-hls-player";
 import { courses } from "../../../../../../raw-data/dummyCourses";
+import axios from "axios";
+// const { exec } = require("child_process");
 
 interface GetCourseDetails {
   isLoading: boolean;
@@ -49,6 +51,7 @@ const LecturePage = () => {
   );
 
   const [videoLink, setVideoLink] = useState<string | null>(null);
+  const [videoPlayerLink, setVideoPlayerLink] = useState<string | null>(null);
 
   const playerRef = useRef(null);
 
@@ -89,10 +92,32 @@ const LecturePage = () => {
     }
   };
 
-  const handleLessonClick = (id: string, videoLink: string) => {
-    setActiveLesson(id);
-    setVideoLink(videoLink);
+  // fetch video link
+  const fetchVideoLink = async (videoLink: string) => {
+    try {
+      const response = await axios(videoLink);
+      if (response) {
+        console.log(response);
+        setVideoPlayerLink(response.data.video_url);
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
+
+  // const fetchVideoLink = (videoLink: string) => {
+  //   const command = `curl -X GET ${videoLink}`;
+
+  //   exec(command, (error: any, stdout: any, stderr: any) => {
+  //     if (error) {
+  //       console.error(`Error: ${error.message}`);
+  //     } else if (stderr) {
+  //       console.error(`Error: ${stderr}`);
+  //     } else {
+  //       console.log(stdout);
+  //     }
+  //   });
+  // };
 
   useEffect(() => {
     getCourseDetails();
@@ -123,6 +148,19 @@ const LecturePage = () => {
     }
   }, [getCourse.data]);
 
+  useEffect(() => {
+    if (videoLink) {
+      fetchVideoLink(videoLink);
+    }
+  }, [videoLink]);
+
+  const handleLessonClick = (id: string, videoLink: string) => {
+    setActiveLesson(id);
+    setVideoLink(videoLink);
+  };
+
+  console.log(getCourse);
+
   return (
     <>
       {getCourse.isLoading && <LoadingSkeleton />}
@@ -140,8 +178,8 @@ const LecturePage = () => {
       )}
       {getCourse.data && (
         <div className="flex flex-col gap-10">
-          <div className="flex">
-            <div className="w-[40%]">
+          <div className="flex flex-col lg:flex-row items-center">
+            <div className="lg:w-[40%]">
               <Image
                 width={200}
                 height={200}
@@ -150,7 +188,7 @@ const LecturePage = () => {
                 src={individualCourse.image ? individualCourse.image : ""}
               />
             </div>
-            <div className="flex flex-col w-[60%] gap-7">
+            <div className="flex flex-col justify w-[60%] gap-7">
               <span className="text-2xl font-bold">
                 {individualCourse.title}
               </span>
@@ -174,8 +212,8 @@ const LecturePage = () => {
           <div className="">
             {videoLink && (
               <ReactHlsPlayer
-                src={`https://originvideo.mero.school/stock%20marketing%20course/1.%20Introduction%20to%20Stock%20Market%7C1.%20Why%20Should%20We%20Invest-uEiH5/master.m3u8`}
-                autoPlay={false}
+                src={`${videoPlayerLink}/master.m3u8`}
+                autoPlay={true}
                 controls={true}
                 width="100%"
                 height="auto"
@@ -198,10 +236,12 @@ const LecturePage = () => {
                 </div>
                 <div className="flex flex-col w-[100%]">
                   <div className="flex justify-between">
-                    <span>{lesson.title}</span>
+                    <span className="text-xs md:text-lg w-[50%]">
+                      {lesson.title}
+                    </span>
                     <div className="flex items-center gap-2">
                       <AccessTime style={{ color: "gray" }} />
-                      <span className="font-thin text-sm">
+                      <span className="font-thin md:text-sm text-xs">
                         {lesson?.duration}
                       </span>
                     </div>

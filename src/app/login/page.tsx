@@ -90,17 +90,19 @@ const LoginPage = () => {
   };
 
   return (
-    <div>
-      <span className="text-3xl font-bold">{`Let's get started`}</span>
-      <div className="flex items-center justify-center mt-[40px]">
-        <div className="flex flex-col gap-[20px]">
-          <span className="text-[25px] font-semibold">
+    <div className="px-5 py-[100px] md:px-0 md:py-0">
+      <span className="text-2xl md:text-3xl font-bold">
+        {`Let's get started`}
+      </span>
+      <div className="flex items-center justify-center mt-4 md:mt-8">
+        <div className="flex flex-col gap-4 md:gap-6">
+          <span className="text-xl md:text-2xl font-semibold">
             Login with Email or Phone Number
           </span>
-          <div className="flex flex-col gap-[15px]">
+          <div className="flex flex-col gap-4">
             <TextField
               size="small"
-              sx={{ width: "25em" }}
+              sx={{ width: "100%" }}
               error={credentials.usernameError.length > 0 ? true : false}
               helperText={credentials.usernameError}
               onChange={handleCredentialsChange}
@@ -111,7 +113,7 @@ const LoginPage = () => {
               InputProps={{
                 sx: {
                   borderRadius: "34px",
-                  padding: "4px 8px",
+                  padding: "10px 15px",
                   fontSize: "18px",
                   backgroundColor: "#F2FFFB",
                   border: "none",
@@ -121,7 +123,7 @@ const LoginPage = () => {
             />
             <TextField
               size="small"
-              sx={{ width: "25em" }}
+              sx={{ width: "100%" }}
               error={credentials.passwordError.length > 0 ? true : false}
               helperText={credentials.passwordError}
               onChange={handleCredentialsChange}
@@ -133,7 +135,7 @@ const LoginPage = () => {
               InputProps={{
                 sx: {
                   borderRadius: "34px",
-                  padding: "4px 8px",
+                  padding: "10px 15px",
                   fontSize: "18px",
                   backgroundColor: "#F2FFFB",
                   border: "none",
@@ -145,13 +147,14 @@ const LoginPage = () => {
               <a
                 href="https://kyc.naasasecurities.com.np/Account/ResetPassword"
                 target="_blank"
+                className="text-sm md:text-base text-naasa-green hover:underline"
               >
                 Forgot your password?
               </a>
             </div>
             <button
               onClick={handleLogin}
-              className="rounded-[26px] py-[10px] px-[20px] bg-naasa-yellow"
+              className="rounded-full py-3 px-6 md:py-4 md:px-8 bg-naasa-yellow text-black text-lg md:text-xl hover:bg-yellow-400 focus:outline-none"
             >
               {loading ? <CircularProgress size={25} /> : "Login"}
             </button>

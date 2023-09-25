@@ -2,9 +2,11 @@ import React from "react";
 
 const TradingSchoolQuestion = () => {
   return (
-    <div className="flex flex-col gap-5 items-center justify-center">
-      <span className="text-3xl font-black">What is Naasa Trading School?</span>
-      <span className="text-center">
+    <div className="flex flex-col gap-3 md:gap-5 items-center justify-center">
+      <span className="text-2xl md:text-3xl lg:text-4xl font-black text-center">
+        What is Naasa Trading School?
+      </span>
+      <span className="text-base mt-[2rem] md:text-lg lg:text-xl text-center">
         Having extensively observed the Nepali stock market, our team of experts
         at Naasa has identified a noticeable knowledge gap prevalent among a
         substantial segment of the Nepali population. Recognizing this need for

@@ -20,7 +20,7 @@ export default function RootLayout({
       <body className={mulish.className}>
         <ThemeProvider theme={theme}>
           <NavBarComponent />
-          <div className="px-[1em] py-[1em] md:px-[15em] md:py-[3em]">
+          <div className="px-[1em] py-[1em] lg:px-[15em] lg:py-[3em]">
             {children}
           </div>
           <FooterComponent />

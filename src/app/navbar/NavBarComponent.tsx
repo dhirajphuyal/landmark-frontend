@@ -49,12 +49,27 @@ const NavBarComponent = () => {
   };
 
   const handleRouteChange = (link: string) => {
-    router.push(link);
+    if (link !== "/about-us") {
+      router.push(link);
+    } else {
+      scrollToSection();
+    }
   };
 
   const handleLogout = () => {
     localStorage.clear();
     setUserInfo(null);
+  };
+
+  const scrollToSection = () => {
+    if (currentPath !== "/") {
+      localStorage.setItem("aboutUs", "true");
+      router.push("/");
+    }
+    const sectionElement = document.getElementById("about-us-section");
+    if (sectionElement) {
+      sectionElement.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -121,6 +136,26 @@ const NavBarComponent = () => {
                     {nav.name}
                   </button>
                 ))}
+                {userInfo ? (
+                  <div className="flex items-center gap-[10px]">
+                    <span
+                      onClick={handleLogout}
+                      className="font-bold cursor-pointer"
+                    >
+                      {userInfo.firstname} {userInfo.lastname}
+                    </span>
+                    <IconButton color="secondary" onClick={handleLogout}>
+                      <Logout />
+                    </IconButton>
+                  </div>
+                ) : (
+                  <button
+                    onClick={() => handleRouteChange("/login")}
+                    className="rounded-[26px] py-[10px] px-[20px] border border-naasa-yellow"
+                  >
+                    Sign In
+                  </button>
+                )}
               </div>
             </Menu>
           </Box>

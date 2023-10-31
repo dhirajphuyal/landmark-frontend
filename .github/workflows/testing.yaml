@@ -1,0 +1,50 @@
+name: Trading School Frontend
+
+on:
+  push:
+    branches: ["testing"]
+  pull_request:
+    branches: ["testing"]
+
+jobs:
+  build:
+    runs-on: azure-test-runner
+
+    env:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: act10ns/slack@v1
+        with:
+          status: starting
+          channel: "#naasa"
+          message: Starting Build For Trading School Module...
+          if: always()
+
+      - name: Build
+        run: |
+          echo "Build Docker Image for Trading School Frontend"
+          docker compose build
+
+      - name: stop previous images
+        run: |
+          echo "Stoping Previous Docker Images"
+          docker compose stop naasa-trading-school-frontend-testing
+
+      - name: remove previous images
+        run: |
+          echo "Removing Previous Docker Images"
+          docker compose rm -f naasa-trading-school-frontend-testing
+
+      - name: Deploy
+        run: |
+          echo "Starting docker images"
+          docker compose up -d
+
+      - uses: act10ns/slack@v1
+        with:
+          status: starting
+          channel: "#naasa"
+          message: Deployed Build For Trading School frontend at https://trading-school.waterflowtechnology.net/
+          if: always()

@@ -36,23 +36,6 @@ const IntroComponent = () => {
     <div className="flex flex-col">
       <div className="overflow-hidden relative">
         <div className="flex h-[65vh] md:h-[80vh] circularAnimation">
-          {/* Mobile view */}
-          <Image
-            src="/images/blurredColor.jpg"
-            alt="quotes"
-            width={1200} // Adjust the mobile width as needed
-            height={1200} // Adjust the mobile height as needed
-            className="md:hidden" // Hide the image on larger screens
-          />
-
-          {/* Desktop view */}
-          <Image
-            src="/images/blurredColor.jpg"
-            alt="quotes"
-            width={700}
-            height={700}
-            className="hidden md:block" // Hide the image on mobile screens
-          />
         </div>
         <div className="absolute bottom-10 md:bottom-20 left-5 md:left-20 w-full h-full flex flex-col gap-5 md:gap-10 justify-center">
           <span className="text-4xl md:text-6xl font-semibold">
@@ -77,31 +60,6 @@ const IntroComponent = () => {
                 showCursor={true}
               />
             </span>
-          {/*<span className="text-2xl md:text-6xl font-semibold flex items-center md:gap-5">*/}
-          {/*  organizing your*/}
-          {/*  <span className="ml-2 text-2xl md:text-8xl">*/}
-          {/*    <ReactTyped*/}
-          {/*      strings={[*/}
-          {/*        "<span style='color: #0075BC;'>Bratabandha</span>",*/}
-          {/*        "<span style='color: #F15632;'>Wedding</span>",*/}
-          {/*        "<span style='color: #FFCC32;'>Birthday</span>",*/}
-          {/*        //"<span style='color: #20B78A;'>Empowered</span>",*/}
-          {/*        //"<span style='color: #F06D26;'>Enlightened</span>",*/}
-          {/*      ]}*/}
-          {/*      typeSpeed={100}*/}
-          {/*      loop*/}
-          {/*      backSpeed={20}*/}
-          {/*      cursorChar="|"*/}
-          {/*      showCursor={true}*/}
-          {/*    />*/}
-          {/*  </span>*/}
-          {/*</span>*/}
-          {/*<span className="text-2xl md:text-4xl flex items-center md:gap-5 font-semibold text-gray-600">*/}
-          {/*  with*/}
-          {/*  <span className="text-3xl ml-2 md:text-6xl text-black">*/}
-          {/*    Landmark Decor*/}
-          {/*  </span>*/}
-          {/*</span>*/}
           <div className="flex mt-5 md:mt-0 gap-2 md:gap-3">
             <button
               onClick={() => router.push("/courses")}
@@ -109,14 +67,6 @@ const IntroComponent = () => {
             >
               Book an Event
             </button>
-            {/*{!userInfo && (*/}
-            {/*  <button*/}
-            {/*    onClick={() => router.push("/login")}*/}
-            {/*    className="rounded-[26px] py-[8px] px-[16px] bg-naasa-yellow text-black text-sm md:text-base"*/}
-            {/*  >*/}
-            {/*    Sign in*/}
-            {/*  </button>*/}
-            {/*)}*/}
           </div>
         </div>
       </div>

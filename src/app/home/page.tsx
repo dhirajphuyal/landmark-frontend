@@ -3,7 +3,7 @@
 import React, { useEffect } from "react";
 import IntroComponent from "./IntroComponent";
 import LandmarkDecorQuestion from "./LandmarkDecorQuestion";
-import CoursesSlider from "./CoursesSlider";
+import EventSlider from "./EventSlider";
 import SettingUsApart from "./SettingUsApart";
 
 const HomePage = () => {
@@ -22,8 +22,8 @@ const HomePage = () => {
     <div className="flex flex-col gap-10 md:gap-[10rem]">
       <IntroComponent />
       <LandmarkDecorQuestion />
-      <CoursesSlider />
-      <SettingUsApart />
+      <EventSlider />
+      {/*<SettingUsApart />*/}
     </div>
   );
 };

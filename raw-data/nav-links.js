@@ -5,10 +5,18 @@ export const navLinks = [
   },
   {
     path: "/courses",
-    name: "Courses",
+    name: "Events",
   },
   {
     path: "/contact-us",
-    name: "Contact Us",
+    name: "Theme",
+  },
+  {
+    path: "/contact-us",
+    name: "Gallery",
+  },
+  {
+    path: "/contact-us",
+    name: "Connect",
   },
 ];

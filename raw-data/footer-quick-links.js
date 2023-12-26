@@ -23,17 +23,17 @@ export const usefulLinks = [
 
 export const quickLinks = [
   {
-    name: "Open an Account",
-    link: "https://kyc.naasasecurities.com.np/Users/PersonalInfo",
+    name: "Login",
+    link: "/#",
   },
 
   {
-    name: "TMS 58 Login",
-    link: "https://tms58.nepsetms.com.np/login",
+    name: "Gallery",
+    link: "/#",
   },
   {
-    name: "Meroshare Login",
-    link: "https://meroshare.cdsc.com.np/#/login",
+    name: "Connect",
+    link: "/#",
   },
 ];
 
@@ -87,15 +87,15 @@ export const companyLinks = [
 export const socialsLink = [
   {
     name: "Facebook",
-    link: "https://www.facebook.com/NEPSE.58/",
+    link: "/#",
   },
   {
     name: "Instagram",
-    link: "https://www.instagram.com/naasa_securities_co_ltd/",
+    link: "/#",
   },
   {
     name: "Twitter",
-    link: "https://twitter.com/naasasecurities",
+    link: "/#",
   },
   // {
   //   name: "Telegram",
@@ -103,11 +103,11 @@ export const socialsLink = [
   // },
   {
     name: "Linked in",
-    link: "https://np.linkedin.com/company/naasa-securities-company-limited",
+    link: "/#",
   },
   {
     name: "YouTube",
-    link: "https://www.youtube.com/channel/UCBq05llR9eO_ggWnK6_suvw",
+    link: "/#",
   },
   // {
   //   name: "Skype",

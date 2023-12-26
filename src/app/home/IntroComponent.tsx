@@ -50,7 +50,7 @@ const IntroComponent = () => {
                   "<span style='color: #0075BC;'>Bratabandha</span>",
                   "<span style='color: #F15632;'>Wedding</span>",
                   "<span style='color: #FFCC32;'>Birthday</span>",
-                  //"<span style='color: #20B78A;'>Empowered</span>",
+                  "<span style='color: #20B78A;'>Weaning</span>",
                   //"<span style='color: #F06D26;'>Enlightened</span>",
                 ]}
                 typeSpeed={100}

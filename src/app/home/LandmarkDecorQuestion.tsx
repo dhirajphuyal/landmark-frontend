@@ -1,6 +1,6 @@
 import React from "react";
 
-const TradingSchoolQuestion = () => {
+const LandmarkDecorQuestion = () => {
   return (
     <div className="flex flex-col gap-3 md:gap-5 items-center justify-center">
       <span className="text-2xl md:text-3xl lg:text-4xl font-black text-center">
@@ -19,4 +19,4 @@ const TradingSchoolQuestion = () => {
   );
 };
 
-export default TradingSchoolQuestion;
+export default LandmarkDecorQuestion;

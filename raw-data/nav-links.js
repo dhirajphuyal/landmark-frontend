@@ -4,7 +4,7 @@ export const navLinks = [
     name: "About Us",
   },
   {
-    path: "/courses",
+    path: "/events",
     name: "Events",
   },
   {

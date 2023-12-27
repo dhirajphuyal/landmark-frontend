@@ -1,25 +1,4 @@
-export const usefulLinks = [
-  {
-    name: "Securities Board of Nepal",
-    link: "https://www.sebon.gov.np/",
-  },
-  {
-    name: "Nepal Stock Exchange",
-    link: "https://www.nepalstock.com/",
-  },
-  {
-    name: "CDS and Clearing Limited",
-    link: "https://cdsc.com.np/",
-  },
-  {
-    name: "Merolagani",
-    link: "https://merolagani.com/",
-  },
-  {
-    name: "UN Consolidated Sanction List",
-    link: "https://www.un.org/securitycouncil/content/un-sc-consolidated-list",
-  },
-];
+
 
 export const quickLinks = [
   {

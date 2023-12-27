@@ -6,13 +6,8 @@ import { useRouter, useParams } from "next/navigation";
 
 import { AccessTime, MenuBook } from "@mui/icons-material";
 import {
-  courses,
-  dummyLessons,
-  module1Details,
-  module2Details,
-  module3Details,
-  module4Details,
-} from "../../../../raw-data/dummyCourses";
+  events,
+} from "../../../../raw-data/dummyEvents";
 import { instance } from "../../../../config/axios";
 import LoadingSkeleton from "./loadingSkeleton";
 
@@ -96,13 +91,13 @@ const IndividualCoursePage = () => {
           ...getCourse,
           error: error.message
             ? error.message
-            : "An error occurred while loading courses",
+            : "An error occurred while loading events",
           isLoading: false,
         });
       } else {
         setGetCourse({
           ...getCourse,
-          error: "An error occurred while loading courses",
+          error: "An error occurred while loading events",
           isLoading: false,
         });
       }
@@ -119,7 +114,7 @@ const IndividualCoursePage = () => {
       const individualCourse = getCourse?.data?.sections?.find(
         (course: any) => course.id === params.courseId
       );
-      const dummyCourses = courses.find(
+      const dummyCourses = events.find(
         (course: any) => course.id == params.courseId
       );
       const moduleDetails =

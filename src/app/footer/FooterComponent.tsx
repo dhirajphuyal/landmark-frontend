@@ -1,15 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter, usePathname } from "next/navigation";
-
-import { Box, Typography } from "@mui/material";
+import { useRouter } from "next/navigation";
 
 import {
-  companyLinks,
   quickLinks,
   socialsLink,
-  usefulLinks,
 } from "../../../raw-data/footer-quick-links";
 
 const FooterComponent = () => {

@@ -8,7 +8,7 @@ import Image from "next/image";
 import { instance, meroSchool } from "../../../../../../config/axios";
 import LoadingSkeleton from "../../loadingSkeleton";
 import ReactHlsPlayer from "react-hls-player";
-import { courses } from "../../../../../../raw-data/dummyCourses";
+import { events } from "../../../../../../raw-data/dummyEvents";
 import axios from "axios";
 // const { exec } = require("child_process");
 
@@ -55,7 +55,7 @@ const LecturePage = () => {
 
   const playerRef = useRef(null);
 
-  // api to fetch all courses
+  // api to fetch all events
   const getCourseDetails = async () => {
     setGetCourse({
       ...getCourse,
@@ -78,13 +78,13 @@ const LecturePage = () => {
           ...getCourse,
           error: error.message
             ? error.message
-            : "An error occurred while loading courses",
+            : "An error occurred while loading events",
           isLoading: false,
         });
       } else {
         setGetCourse({
           ...getCourse,
-          error: "An error occurred while loading courses",
+          error: "An error occurred while loading events",
           isLoading: false,
         });
       }
@@ -129,7 +129,7 @@ const LecturePage = () => {
         (course: any) => course.id === params.courseId
       );
 
-      const dummyCourse = courses.find(
+      const dummyCourse = events.find(
         (course: any) => course.id == params.courseId
       );
 

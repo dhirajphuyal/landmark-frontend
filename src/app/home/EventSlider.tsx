@@ -39,7 +39,7 @@ const EventSlider = () => {
           Glimpses of our past works
         </span>
         <button
-          onClick={() => router.push("/courses")}
+          onClick={() => router.push("/events")}
           className="md:absolute  flex items-center text-xs md:text-lg mt-2 md:mt-0 right-0 top-[10px] md:top-0 rounded-[26px] py-[5px] px-[16px] bg-[#fff] bg-opacity-50 border border-naasa-green md:rounded-[26px] md:py-[5px] md:px-[20px]"
         >
           Checkout all

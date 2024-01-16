@@ -10,10 +10,10 @@ const {
 const theme = createTheme({
   palette: {
     primary: {
-      main: colors["naasa-green"],
+      main: colors["landmark-light"],
     },
     secondary: {
-      main: colors["naasa-yellow"],
+      main: colors["landmark-dark"],
     },
   },
 });

@@ -37,30 +37,10 @@ export const companyLinks = [
     name: "Pricing",
     link: "/pricing/1",
   },
-  // {
-  //   name: "Refer & Earn",
-  //   link: "/#",
-  // },
-  // {
-  //   name: "Press Releases",
-  //   link: "/#",
-  // },
-  // {
-  //   name: "Bug Bounty Program",
-  //   link: "/#",
-  // },
-  // {
-  //   name: "Afilliate Program",
-  //   link: "/#",
-  // },
   {
     name: "Contact Us",
     link: "/contact-us",
   },
-  // {
-  //   name: "Help Center",
-  //   link: "/#",
-  // },
 ];
 
 export const socialsLink = [
@@ -76,10 +56,6 @@ export const socialsLink = [
     name: "Twitter",
     link: "/#",
   },
-  // {
-  //   name: "Telegram",
-  //   link: "/#",
-  // },
   {
     name: "Linked in",
     link: "/#",
@@ -88,8 +64,4 @@ export const socialsLink = [
     name: "YouTube",
     link: "/#",
   },
-  // {
-  //   name: "Skype",
-  //   link: "/#",
-  // },
 ];

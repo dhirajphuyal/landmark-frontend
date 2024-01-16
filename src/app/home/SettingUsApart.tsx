@@ -7,7 +7,7 @@ const SettingUsApart = () => {
         What sets us apart?
       </span>
       <div className="flex flex-col md:flex-row flex-wrap md:flex-no-wrap gap-4 md:gap-5 mt-4 w-full justify-between">
-        <div className="flex flex-col gap-3 md:gap-5 items-center bg-[#D0F0E6] border border-naasa-green bg-opacity-40 md:w-[32%] rounded-[37px] p-5 md:p-10">
+        <div className="flex flex-col gap-3 md:gap-5 items-center bg-[#D0F0E6] border border-landmark-dark bg-opacity-40 md:w-[32%] rounded-[37px] p-5 md:p-10">
           <span className="text-xl md:text-2xl font-semibold text-center">
             Practical <br /> Session
           </span>
@@ -17,7 +17,7 @@ const SettingUsApart = () => {
             them with real-life implications.
           </span>
         </div>
-        <div className="flex flex-col gap-3 md:gap-5 items-center bg-[#D0F0E6] border border-naasa-green bg-opacity-40 md:w-[32%] rounded-[37px] p-5 md:p-10">
+        <div className="flex flex-col gap-3 md:gap-5 items-center bg-[#D0F0E6] border border-landmark-dark bg-opacity-40 md:w-[32%] rounded-[37px] p-5 md:p-10">
           <span className="text-xl md:text-2xl font-semibold text-center">
             Prepared by <br /> the Best 
           </span>
@@ -27,7 +27,7 @@ const SettingUsApart = () => {
             knowledge to excel in your investment endeavors.
           </span>
         </div>
-        <div className="flex flex-col gap-3 md:gap-5 items-center bg-[#D0F0E6] border border-naasa-green bg-opacity-40 md:w-[32%] rounded-[37px] p-5 md:p-10">
+        <div className="flex flex-col gap-3 md:gap-5 items-center bg-[#D0F0E6] border border-landmark-dark bg-opacity-40 md:w-[32%] rounded-[37px] p-5 md:p-10">
           <span className="text-xl md:text-2xl font-semibold text-center">
             Personalized <br /> Journey
           </span>

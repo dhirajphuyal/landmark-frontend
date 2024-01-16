@@ -147,14 +147,14 @@ const LoginPage = () => {
               <a
                 href="https://kyc.naasasecurities.com.np/Account/ResetPassword"
                 target="_blank"
-                className="text-sm md:text-base text-naasa-green hover:underline"
+                className="text-sm md:text-base text-landmark-dark hover:underline"
               >
                 Forgot your password?
               </a>
             </div>
             <button
               onClick={handleLogin}
-              className="rounded-full py-3 px-6 md:py-4 md:px-8 bg-naasa-yellow text-black text-lg md:text-xl hover:bg-yellow-400 focus:outline-none"
+              className="rounded-full py-3 px-6 md:py-4 md:px-8 bg-landmark-light text-black text-lg md:text-xl hover:bg-yellow-400 focus:outline-none"
             >
               {loading ? <CircularProgress size={25} /> : "Login"}
             </button>

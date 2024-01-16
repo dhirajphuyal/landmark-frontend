@@ -12,11 +12,11 @@ const FooterComponent = () => {
   const router = useRouter();
 
   return (
-    <div className="bg-naasa-green md:px-[15em] md:py-[4em] static bottom-0 w-[100%]">
+    <div className="bg-landmark-dark md:px-[15em] md:py-[4em] static bottom-0 w-[100%]">
       <div className="flex flex-col P-[25px] md:flex-row justify-between gap-[20px] w-[100%] text-[16px] text-white">
         <div className="flex flex-col gap-[20px] w-[30%]">
           <Image
-            src="/images/trading_school_logo.png"
+            src="/images/landmark_logo.png"
             alt="nasalogo"
             height="150"
             width="250"

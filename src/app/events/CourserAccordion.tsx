@@ -51,7 +51,7 @@ const CourserAccordion = () => {
               <div className="flex flex-col gap-2 w-1/2 w-[100%] md:w-[70%] justify-center">
                 <span
                   className={`font-bold text-xl md:text-2xl ${
-                    activeAccordion[index] && "text-naasa-green"
+                    activeAccordion[index] && "text-landmark-dark"
                   }`}
                 >
                   {event.title}

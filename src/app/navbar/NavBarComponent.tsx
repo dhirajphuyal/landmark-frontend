@@ -88,7 +88,7 @@ const NavBarComponent = () => {
             onClick={() => router.push("/")}
           >
             <Image
-              src="/images/trading_school_logo.png"
+              src="/images/landmark_logo.png"
               alt="nasalogo"
               height="140"
               width="180"
@@ -121,7 +121,7 @@ const NavBarComponent = () => {
                 key={index}
                 // size="small"
                 onClick={() => handleRouteChange(nav.path)}
-                className={`hover:border-b hover:border-naasa-green hover:border-b-1 text-[14px] text-black ${
+                className={`hover:border-b hover:border-landmark-dark hover:border-b-1 text-[14px] text-black ${
                   nav.path === currentPath && "font-bold"
                 }`}
               >
@@ -147,7 +147,7 @@ const NavBarComponent = () => {
             ) : (
               <button
                 onClick={() => handleRouteChange("/login")}
-                className="rounded-[26px] py-[10px] px-[20px] border border-naasa-yellow"
+                className="rounded-[26px] py-[10px] px-[20px] border border-landmark-light"
               >
                 Sign In
               </button>

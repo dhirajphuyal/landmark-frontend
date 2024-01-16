@@ -8,8 +8,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "naasa-green": "#20B78A",
-        "naasa-yellow": "#FFCC32",
+        "landmark-dark": "#B9AF87",
+        "landmark-light": "#F1EFE7",
       },
     },
   },

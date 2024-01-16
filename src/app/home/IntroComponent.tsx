@@ -63,7 +63,7 @@ const IntroComponent = () => {
           <div className="flex mt-5 md:mt-0 gap-2 md:gap-3">
             <button
               onClick={() => router.push("/events")}
-              className="rounded-[26px] py-[8px] px-[16px] bg-naasa-green text-white text-sm md:text-base"
+              className="rounded-[26px] py-[8px] px-[16px] bg-landmark-dark text-white text-sm md:text-base"
             >
               Book an Event
             </button>

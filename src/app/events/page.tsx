@@ -1,16 +1,16 @@
 "use client";
 
 import React, { useRef } from "react";
-import CourserAccordion from "./CourserAccordion";
+import EventAccordion from "./EventAccordion";
 
-const CoursesPage = () => {
+const EventsPage = () => {
   const playerRef = useRef(null);
   return (
     <div className="flex flex-col gap-10">
       <span className="text-3xl font-black text-center">Events</span>
-      <CourserAccordion />
+      <EventAccordion />
     </div>
   );
 };
 
-export default CoursesPage;
+export default EventsPage;

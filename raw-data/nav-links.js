@@ -4,15 +4,15 @@ export const navLinks = [
     name: "About Us",
   },
   {
-    path: "/eventsnpm ",
+    path: "/events ",
     name: "Events",
   },
   {
-    path: "/contact-us",
+    path: "/theme",
     name: "Theme",
   },
   {
-    path: "/contact-us",
+    path: "/gallery",
     name: "Gallery",
   },
   {

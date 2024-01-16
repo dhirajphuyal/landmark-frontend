@@ -7,7 +7,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Add, Remove } from "@mui/icons-material";
 import Image from "next/image";
 
-const CourserAccordion = () => {
+const EventAccordion = () => {
   const router = useRouter();
 
   const [activeAccordion, setActiveAccordion] = useState(
@@ -74,4 +74,4 @@ const CourserAccordion = () => {
   );
 };
 
-export default CourserAccordion;
+export default EventAccordion;

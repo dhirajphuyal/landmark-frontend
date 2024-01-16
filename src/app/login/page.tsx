@@ -26,7 +26,6 @@ const LoginPage = () => {
 
   const [loading, setLoading] = useState(false);
 
-  //kyc login api call
   const postLogin = async () => {
     try {
       setLoading(true);
@@ -97,7 +96,7 @@ const LoginPage = () => {
       <div className="flex items-center justify-center mt-4 md:mt-8">
         <div className="flex flex-col gap-4 md:gap-6">
           <span className="text-xl md:text-2xl font-semibold">
-            Login with Email or Phone Number
+            Login with your Email
           </span>
           <div className="flex flex-col gap-4">
             <TextField
@@ -108,7 +107,7 @@ const LoginPage = () => {
               onChange={handleCredentialsChange}
               value={credentials.username}
               name="username"
-              placeholder="Enter your email or phone number"
+              placeholder="Enter your email"
               onKeyDown={handleEnter}
               InputProps={{
                 sx: {
@@ -143,15 +142,6 @@ const LoginPage = () => {
                 disableUnderline: true,
               }}
             />
-            <div className="flex justify-end">
-              <a
-                href="https://kyc.naasasecurities.com.np/Account/ResetPassword"
-                target="_blank"
-                className="text-sm md:text-base text-landmark-dark hover:underline"
-              >
-                Forgot your password?
-              </a>
-            </div>
             <button
               onClick={handleLogin}
               className="rounded-full py-3 px-6 md:py-4 md:px-8 bg-landmark-light text-black text-lg md:text-xl hover:bg-yellow-400 focus:outline-none"

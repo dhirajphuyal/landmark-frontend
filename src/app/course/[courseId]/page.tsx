@@ -11,7 +11,7 @@ import {
 import { instance } from "../../../../config/axios";
 import LoadingSkeleton from "./loadingSkeleton";
 
-interface GetCourseDetails {
+interface GetEventDetails {
   isLoading: boolean;
   data: any;
   error: any;
@@ -54,7 +54,7 @@ interface IndividualCourse {
 const IndividualCoursePage = () => {
   const params = useParams();
   const router = useRouter();
-  const [getCourse, setGetCourse] = useState<GetCourseDetails>({
+  const [getCourse, setGetCourse] = useState<GetEventDetails>({
     isLoading: false,
     data: null,
     error: null,

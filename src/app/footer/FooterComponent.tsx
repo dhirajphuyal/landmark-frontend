@@ -14,10 +14,10 @@ const FooterComponent = () => {
   return (
     <div className="bg-landmark-dark md:px-[15em] md:py-[4em] static bottom-0 w-[100%]">
       <div className="flex flex-col P-[25px] md:flex-row justify-between gap-[20px] w-[100%] text-[16px] text-white">
-        <div className="flex flex-col gap-[20px] w-[30%]">
+        <div className="flex flex-col gap-[10px] w-[30%]">
           <Image
             src="/images/landmark_logo.png"
-            alt="nasalogo"
+            alt="landmarklogo"
             height="150"
             width="250"
           />
@@ -71,8 +71,8 @@ const FooterComponent = () => {
         </div>
       </div>
       <div className="flex justify-end gap-[1.5rem] text-[16px] text-white">
-        <Link href="/privacy-policy">Privacy Policy</Link>
-        <Link href="/terms-and-services">Terms & Services</Link>
+        <Link href="/#">Privacy Policy</Link>
+        <Link href="/#">Terms & Services</Link>
       </div>
     </div>
   );

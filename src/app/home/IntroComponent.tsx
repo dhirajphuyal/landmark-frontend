@@ -47,11 +47,10 @@ const IntroComponent = () => {
             <span className="ml-2 text-2xl md:text-8xl">
               <ReactTyped
                 strings={[
-                  "<span style='color: #0075BC;'>Bratabandha</span>",
-                  "<span style='color: #F15632;'>Wedding</span>",
-                  "<span style='color: #FFCC32;'>Birthday</span>",
-                  "<span style='color: #20B78A;'>Weaning</span>",
-                  //"<span style='color: #F06D26;'>Enlightened</span>",
+                  "<span style='color: #9DBC98;'>Bratabandha</span>",
+                  "<span style='color: #EBD9B4;'>Wedding</span>",
+                  "<span style='color: #638889;'>Birthday</span>",
+                  "<span style='color: #EBD9B4;'>Weaning</span>",
                 ]}
                 typeSpeed={100}
                 loop
@@ -77,7 +76,7 @@ const IntroComponent = () => {
         <Image src="/images/quotes.svg" alt="quotes" height={40} width={40} />
         <div className="flex h-[10vh] items-end">
           <span className="text-sm md:text-lg text-center">
-            Portal to satisfying your celebration needs. All in one place.
+            Your one-stop destination for fulfilling all your celebration requirements.
           </span>
         </div>
       </div>

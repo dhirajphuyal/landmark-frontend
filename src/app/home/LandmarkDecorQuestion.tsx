@@ -7,13 +7,7 @@ const LandmarkDecorQuestion = () => {
         What is Landmark Decor?
       </span>
       <span className="text-base mt-[2rem] md:text-lg lg:text-xl text-center">
-        LandMark.Decor Events is a full-service planning and design
-        Site. Whether your style is breathtakingly bold, exquisitely
-        elegant, or charmingly chic, our talented team will carefully
-        curate every element of your vision to make sure it shines
-        as brightly as you. We don’t believe in burn and turn, which is why at
-        LandMark.Decor, we work together with our couples to create and execute
-        a custom and stunning vision.
+        LandMark.Decor Events is your premier full-service planning and design destination. Whether your taste leans towards bold sophistication, exquisite elegance, or charming chicness, our skilled team is dedicated to meticulously curating every detail of your vision. Rejecting the notion of quick turnover, at LandMark.Decor, we collaborate closely with our couples to craft and bring to life a bespoke and stunning vision tailored just for you.
       </span>
     </div>
   );

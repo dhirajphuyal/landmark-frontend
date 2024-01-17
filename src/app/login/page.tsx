@@ -29,7 +29,7 @@ const LoginPage = () => {
   const postLogin = async () => {
     try {
       setLoading(true);
-      const res = await instance.post("/Login", {
+      const res = await instance.post("/login", {
         username: credentials.username,
         password: credentials.password,
       });
@@ -102,7 +102,7 @@ const LoginPage = () => {
             <TextField
               size="small"
               sx={{ width: "100%" }}
-              error={credentials.usernameError.length > 0 ? true : false}
+              error={credentials.usernameError.length > 0}
               helperText={credentials.usernameError}
               onChange={handleCredentialsChange}
               value={credentials.username}
@@ -123,7 +123,7 @@ const LoginPage = () => {
             <TextField
               size="small"
               sx={{ width: "100%" }}
-              error={credentials.passwordError.length > 0 ? true : false}
+              error={credentials.passwordError.length > 0}
               helperText={credentials.passwordError}
               onChange={handleCredentialsChange}
               value={credentials.password}

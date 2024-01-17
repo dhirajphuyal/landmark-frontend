@@ -8,15 +8,11 @@ export const navLinks = [
     name: "Events",
   },
   {
-    path: "/theme",
-    name: "Theme",
-  },
-  {
     path: "/gallery",
     name: "Gallery",
   },
   {
-    path: "/contact-us",
+    path: "/connect",
     name: "Connect",
   },
 ];

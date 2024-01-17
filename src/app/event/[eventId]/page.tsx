@@ -17,60 +17,40 @@ interface GetEventDetails {
   error: any;
 }
 
-interface Lessons {
+interface Events {
   id: string;
   title: string;
-  lesson_title: string;
-  duration: string;
-  course_id: string;
-  section_id: string;
-  video_type: string;
-  is_lesson_free: string;
-  video_url: string;
-  attachment_type: string;
-  attachment_url: string;
-  attachment: string;
-  is_completed: number;
-  user_validity: boolean;
-  is_preview: null | any; // Adjust the type of is_preview as needed
-  lesson_type: string;
-  summary: string;
-  // Add 'image' and 'description' properties if you want to include them
   image?: string;
   description?: string;
 }
 
-interface IndividualCourse {
-  // course_id:string,
-  // id:string,
-  lessonsCount: number;
-  lessons: Lessons[];
-  title: string;
-  duration: string;
+interface IndividualEvent {
+  event_id:string,
+  id:string,
+  title:string,
   description: string | undefined;
   image: string | undefined;
 }
 
-const IndividualCoursePage = () => {
+const IndividualEventPage = () => {
   const params = useParams();
   const router = useRouter();
-  const [getCourse, setGetCourse] = useState<GetEventDetails>({
+  const [getCourse, setGetEvent] = useState<GetEventDetails>({
     isLoading: false,
     data: null,
     error: null,
   });
 
-  const [individualCourse, setIndividualCourse] = useState<IndividualCourse>({
-    lessonsCount: 0,
-    lessons: [],
+  const [individualCourse, setIndividualCourse] = useState<IndividualEvent>({
+    event_id: "",
+    id: "",
     title: "",
-    duration: "",
     description: "",
     image: "",
   });
 
-  const getCourseDetails = async () => {
-    setGetCourse({
+  const getEventDetails = async () => {
+    setGetEvent({
       ...getCourse,
       isLoading: true,
     });
@@ -79,7 +59,7 @@ const IndividualCoursePage = () => {
         courseId: 94,
       });
       if (res) {
-        setGetCourse({
+        setGetEvent({
           ...getCourse,
           data: res?.data,
           isLoading: false,
@@ -87,7 +67,7 @@ const IndividualCoursePage = () => {
       }
     } catch (error) {
       if (error instanceof Error) {
-        setGetCourse({
+        setGetEvent({
           ...getCourse,
           error: error.message
             ? error.message
@@ -95,7 +75,7 @@ const IndividualCoursePage = () => {
           isLoading: false,
         });
       } else {
-        setGetCourse({
+        setGetEvent({
           ...getCourse,
           error: "An error occurred while loading events",
           isLoading: false,
@@ -106,7 +86,7 @@ const IndividualCoursePage = () => {
   };
 
   useEffect(() => {
-    getCourseDetails();
+    getEventDetails();
   }, []);
 
   useEffect(() => {
@@ -117,15 +97,7 @@ const IndividualCoursePage = () => {
       const dummyCourses = events.find(
         (course: any) => course.id == params.courseId
       );
-      const moduleDetails =
-        params.courseId == "1764"
-          ? module1Details
-          : params.courseId == "1808"
-          ? module3Details
-          : params.courseId == "1825"
-          ? module4Details
-          : module2Details;
-      const updatedLessons: Lessons[] = individualCourse.lessons?.map(
+      const updatedLessons: Events[] = individualCourse.lessons?.map(
         (lesson: any) => {
           const updatedLesson = moduleDetails.find(
             (details: any) => details.id == lesson.id
@@ -204,7 +176,7 @@ const IndividualCoursePage = () => {
             </div>
           </div>
           <div className="flex flex-wrap mt-5">
-            {individualCourse?.lessons?.map((lesson, index) => (
+            {individualCourse?.events?.map((event, index) => (
               <div
                 key={index}
                 className="w-1/3 flex flex-col items-center rounded-lg p-2 cursor-pointer shadow-md hover:shadow-2xl box-border mb-[20px] mr-[20px]"
@@ -212,11 +184,11 @@ const IndividualCoursePage = () => {
                   width: "calc(33.33% - 20px)",
                 }}
                 onClick={() =>
-                  router.push(`/course/${params.courseId}/lecture/${lesson.id}`)
+                  router.push(`/course/${params.courseId}/lecture/${event.id}`)
                 }
               >
                 <Image
-                  src={lesson.image ? lesson.image : ""}
+                  src={event.image ? event.image : ""}
                   width={300}
                   height={200}
                   style={{ height: 200, width: "100%" }}
@@ -224,15 +196,15 @@ const IndividualCoursePage = () => {
                 />
                 <div className="flex flex-col justify-between w-[100%] gap-2 p-2 ">
                   <div className="flex items-center justify-between w-[100%]">
-                    <span className="text-base font-bold">{lesson.title}</span>
+                    <span className="text-base font-bold">{event.title}</span>
                     <div className="flex gap-2 items-center">
                       <AccessTime style={{ color: "gray" }} />
                       <span className="font-thin text-xs">
-                        {lesson.duration}
+                        {event.duration}
                       </span>
                     </div>
                   </div>
-                  <span className="text-sm">{lesson.description}</span>
+                  <span className="text-sm">{event.description}</span>
                 </div>
               </div>
             ))}
@@ -243,4 +215,4 @@ const IndividualCoursePage = () => {
   );
 };
 
-export default IndividualCoursePage;
+export default IndividualEventPage;

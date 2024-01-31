@@ -17,6 +17,14 @@ Note: Add link to your backend in the above environment variable. I recommend us
 Then install the packages with:
 
 ```bash
+npm run install
+# or 
+yarn install
+```
+
+Finally, run the application with:
+
+```bash
 npm run dev
 # or
 yarn dev

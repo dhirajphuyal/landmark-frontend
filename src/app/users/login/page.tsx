@@ -2,9 +2,11 @@
 
 import React, { ChangeEvent, useState } from "react";
 import { useRouter } from "next/navigation";
+
 import { TextField, CircularProgress } from "@mui/material";
 import axios from "axios";
-import { instance } from "../../../config/axios";
+
+import { instance } from "../../../../config/axios";
 
 interface Credentials {
   username: string;
@@ -39,7 +41,7 @@ const LoginPage = () => {
           passwordError: "",
         });
         localStorage.setItem("token", res?.data);
-        router.push("/admin/dashboard");
+        router.push("/");
       }
     } catch (error) {
       setLoading(false);

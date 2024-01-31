@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import { events } from "../../../raw-data/dummyEvents";
+import { superEvents } from "../../../raw-data/dummyEvents";
 import Image from "next/image";
 
 const GalleryAccordion = () => {
     const router = useRouter();
 
     const [activeAccordion, setActiveAccordion] = useState(
-        Array(events.length).fill(false)
+        Array(superEvents.length).fill(false)
     );
 
     const toggleAccordion = (index: number) => {
@@ -18,7 +18,7 @@ const GalleryAccordion = () => {
 
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {events?.map((event, index) => (
+            {superEvents?.map((event, index) => (
                 <div key={index} className="border rounded overflow-hidden">
                     <div
                         className="expand-icon hover:bg-gray-200 p-2 cursor-pointer"

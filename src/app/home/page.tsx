@@ -4,7 +4,6 @@ import React, { useEffect } from "react";
 import IntroComponent from "./IntroComponent";
 import LandmarkDecorQuestion from "./LandmarkDecorQuestion";
 import EventSlider from "./EventSlider";
-import SettingUsApart from "./SettingUsApart";
 
 const HomePage = () => {
   useEffect(() => {
@@ -23,7 +22,6 @@ const HomePage = () => {
       <IntroComponent />
       <LandmarkDecorQuestion />
       <EventSlider />
-      {/*<SettingUsApart />*/}
     </div>
   );
 };

@@ -12,10 +12,16 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { navLinks } from "../../../raw-data/nav-links";
 import { Logout } from "@mui/icons-material";
 
+interface User{
+  exp: number,
+  user: UserInfo;
+}
+
 interface UserInfo {
-  firstname: string;
-  lastname: string;
-  exp: number;
+  firstName: string;
+  lastName: string;
+  id: string;
+  role: string,
 }
 
 const NavBarComponent = () => {
@@ -30,9 +36,11 @@ const NavBarComponent = () => {
   useEffect(() => {
     if (userToken) {
       try {
-        const user = jwt.decode(userToken) as UserInfo;
+        const user = jwt.decode(userToken) as User;
+        const userInfo = user.user;
         if (user) {
-          user && setUserInfo(user);
+          user && setUserInfo(userInfo);
+          console.log(user);
         }
       } catch (error) {
         console.error("Error decoding JWT:", error);
@@ -59,7 +67,12 @@ const NavBarComponent = () => {
   const handleLogout = () => {
     localStorage.clear();
     setUserInfo(null);
+    router.push("/home");
   };
+
+  const adminDashboard = () => {
+    router.push("/admin/dashboard")
+  }
 
   const scrollToSection = () => {
     if (currentPath !== "/") {
@@ -82,29 +95,16 @@ const NavBarComponent = () => {
         }}
       >
         <div className="flex py-[0.5rem] md:px-[15em]">
-          {/* Mobile view */}
-          <Box
-            sx={{ display: { xs: "none", md: "flex" }, cursor: "pointer" }}
-            onClick={() => router.push("/")}
-          >
-            <Image
-              src="/images/landmark_logo.png"
-              alt="nasalogo"
-              height="140"
-              width="180"
-            />
-          </Box>
-
           {/* Desktop view */}
           <Box
             sx={{ display: { xs: "flex", md: "none" } }}
             onClick={() => router.push("/")}
           >
             <Image
-              src="/images/trading_school_logo.png"
-              alt="nasalogo"
-              height="70"
-              width="150"
+                src="/images/landmark_logo.png"
+                alt="landmarklogo"
+                height="120"
+                width="180"
             />
           </Box>
           <Box
@@ -131,18 +131,18 @@ const NavBarComponent = () => {
 
             {userInfo ? (
               <div className="flex items-center gap-[10px]">
-                <Avatar>{userInfo?.firstname?.charAt(0).toUpperCase()}</Avatar>
+                <Avatar>{userInfo?.firstName?.charAt(0).toUpperCase()}</Avatar>
                 <Tooltip title="Logout">
                   <span
-                    onClick={handleLogout}
+                    onClick={adminDashboard}
                     className="font-bold cursor-pointer"
                   >
-                    {userInfo.firstname} {userInfo.lastname}
+                    {userInfo.firstName} {userInfo.lastName}
                   </span>
                 </Tooltip>
-                {/* <IconButton color="secondary" onClick={handleLogout}>
+                 <IconButton color="secondary" onClick={handleLogout}>
                     <Logout />
-                  </IconButton> */}
+                  </IconButton>
               </div>
             ) : (
               <button

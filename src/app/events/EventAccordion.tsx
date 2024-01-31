@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 
-import { events } from "../../../raw-data/dummyEvents";
+import { superEvents } from "../../../raw-data/dummyEvents";
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Add, Remove } from "@mui/icons-material";
@@ -11,7 +11,7 @@ const EventAccordion = () => {
   const router = useRouter();
 
   const [activeAccordion, setActiveAccordion] = useState(
-    Array(events.length).fill(false)
+    Array(superEvents.length).fill(false)
   );
 
   const toggleAccordion = (index: number) => {
@@ -22,7 +22,7 @@ const EventAccordion = () => {
 
   return (
     <div>
-      {events?.map((event, index) => (
+      {superEvents?.map((event, index) => (
         <Accordion key={index} expanded={activeAccordion[index]}>
           <AccordionSummary
             expandIcon={
